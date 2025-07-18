@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 // Add services to the container.
 
@@ -13,7 +15,7 @@ builder.Services.AddControllers(
 
 	).AddNewtonsoftJson().AddXmlDataContractSerializerFormatters();
 
-//builder.Services.AddProblemDetails(
+builder.Services.AddProblemDetails();
 //    options =>
 //    {
 //        options.CustomizeProblemDetails = ctx =>
@@ -33,6 +35,12 @@ builder.Services.AddSingleton<FileExtensionContentTypeProvider>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler();
+
+}
+
 if (app.Environment.IsDevelopment()) 
 {
     app.UseSwagger();
