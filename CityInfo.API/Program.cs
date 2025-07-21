@@ -58,7 +58,7 @@ builder.Services.AddSingleton<CitiesDataStore>();
 
 builder.Services.AddDbContext<CityInfoContext>(
     DbContextOptions => DbContextOptions.UseSqlite(
-    builder.Configuration["ConnectionStrings: CityInfoDBConnectionString"]));
+    builder.Configuration["ConnectionStrings:CityInfoDBConnectionString"]));
 
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
