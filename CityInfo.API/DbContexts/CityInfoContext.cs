@@ -39,15 +39,22 @@ namespace CityInfo.API.DbContexts
 					CityId =1,
 					Description = "The home"
 				},
+					new PointOfInterest("fghfghfg")
+					{
+						Id = 2,
+						CityId = 1,
+						Description = "dsfsdfsd"
+					},
+
 				new PointOfInterest("zooPark")
 				{
-					Id = 2,
+					Id = 3,
 					CityId =2,
 					Description = "The animal zoo"
 				}
 				);
 
-
+			modelBuilder.Entity<City>().HasMany<PointOfInterest>(c => c.PointsOfInterest);
 			base.OnModelCreating(modelBuilder);
 		}
 
