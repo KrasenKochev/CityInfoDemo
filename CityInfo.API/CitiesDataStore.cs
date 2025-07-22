@@ -17,15 +17,15 @@ namespace CityInfo.API
 					Id = 1,
 					Name = "new yourk city",
 					Description = "the city with addicts",
-					PointsOfInterests = new List<PointsOfInterestDto>()
+					PointsOfInterests = new List<PointOfInterestDto>()
 					{
-						new PointsOfInterestDto()
+						new PointOfInterestDto()
 						{
 							Id =1,
 							Name = "central Park",
 							Description = " Something, something, bla bla"
 						},
-						new PointsOfInterestDto()
+						new PointOfInterestDto()
 						{
 							Id =2,
 							Name = "central Park number two",
@@ -38,15 +38,15 @@ namespace CityInfo.API
 					Id = 2,
 					Name = "lovech",
 					Description = "the hometown city",
-					PointsOfInterests = new List<PointsOfInterestDto>()
+					PointsOfInterests = new List<PointOfInterestDto>()
 					{
-						new PointsOfInterestDto()
+						new PointOfInterestDto()
 						{
 							Id =3,
 							Name = "My Home",
 							Description = "The place I live"
 						},
-						new PointsOfInterestDto()
+						new PointOfInterestDto()
 						{
 							Id = 4,
 							Name ="My hub",
@@ -59,9 +59,9 @@ namespace CityInfo.API
 					Id = 3,
 					Name = "bashbunar",
 					Description = "the dog city",
-					PointsOfInterests = new List<PointsOfInterestDto>()
+					PointsOfInterests = new List<PointOfInterestDto>()
 					{
-						new PointsOfInterestDto()
+						new PointOfInterestDto()
 						{
 							Id =5,
 							Name = "homeless Dogs",
