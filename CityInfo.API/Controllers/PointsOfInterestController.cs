@@ -96,27 +96,28 @@ namespace CityInfo.API.Controllers
 				}, createdPointOfInterestToReturn);
 
 		}
-		//[HttpPut("{pointofinteresid}")]
-		//public ActionResult UpdatePointOfInterest(int cityId, int pointofinteresid,
-		//	PointOfInterestForUpdateDto pointOfInterest)
-		//{
-		//	var city = _citiesDataStore.Cities.FirstOrDefault(c => c.Id == cityId);
-		//	if (city == null)
-		//	{
-		//		return NotFound();
-		//	}
+		[HttpPut("{pointofinteresid}")]
+		public async Task< ActionResult> UpdatePointOfInterest(int cityId, int pointofinteresid,
+			PointOfInterestForUpdateDto pointOfInterest)
+		{
+			if (!await _cityInfoRepository.CityExistAsync(cityId))
+			{
+				return NotFound();
+			}
 
-		//	var pointOfInterestFromStore = city.PointsOfInterests.FirstOrDefault(c => c.Id == pointofinteresid);
-		//	if (pointOfInterestFromStore == null)
-		//	{
-		//		return NotFound();
-		//	}
+			var pointOfInterestEntity = await _cityInfoRepository
+				.GetPointOfInterestForCityAsync(cityId, pointofinteresid);
+			if (pointOfInterestEntity == null)
+			{
+				return NotFound();
+			}
 
-		//	pointOfInterestFromStore.Name = pointOfInterest.Name;
-		//	pointOfInterestFromStore.Description = pointOfInterest.Description;
+			_mapper.Map(pointOfInterest, pointOfInterestEntity);
 
-		//	return NoContent();
-		//}
+			await _cityInfoRepository.SaveChangesAsync();
+
+			return NoContent();
+		}
 		//[HttpPatch("{pointofinterestid}")]
 
 		//public ActionResult PartiallyUpdatedPointOfInterest(
