@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CityInfo.API.Migrations
 {
     [DbContext(typeof(CityInfoContext))]
-    [Migration("20250721145147_AddingPoints")]
-    partial class AddingPoints
+    [Migration("20250723091524_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,7 +26,6 @@ namespace CityInfo.API.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
@@ -44,13 +43,19 @@ namespace CityInfo.API.Migrations
                         {
                             Id = 1,
                             Description = "The hometown",
-                            Name = "Lovech dage"
+                            Name = "Lovech"
                         },
                         new
                         {
                             Id = 2,
                             Description = "The da-ge original city",
                             Name = "Pleven da-ge"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "The one with that big tower",
+                            Name = "Paris"
                         });
                 });
 
@@ -90,8 +95,8 @@ namespace CityInfo.API.Migrations
                         {
                             Id = 2,
                             CityId = 1,
-                            Description = "dsfsdfsd",
-                            Name = "fghfghfg"
+                            Description = "A Skycraper",
+                            Name = "Empire State Building"
                         },
                         new
                         {
@@ -99,6 +104,27 @@ namespace CityInfo.API.Migrations
                             CityId = 2,
                             Description = "The animal zoo",
                             Name = "zooPark"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityId = 2,
+                            Description = "The finest station",
+                            Name = "Antwerp Central Station"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CityId = 3,
+                            Description = "The big Tower",
+                            Name = "Eifell Tower"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CityId = 3,
+                            Description = "Largest Museum",
+                            Name = "The Louvre"
                         });
                 });
 
