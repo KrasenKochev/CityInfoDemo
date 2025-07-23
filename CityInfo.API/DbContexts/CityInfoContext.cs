@@ -71,7 +71,7 @@ namespace CityInfo.API.DbContexts
 				},
 				new PointOfInterest("The Louvre")
 				{
-					Id = 5,
+					Id = 6,
 					CityId = 3,
 					Description = "Largest Museum"
 				}
