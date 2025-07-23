@@ -157,7 +157,7 @@ namespace CityInfo.API.Controllers
 
 			return NoContent();
 		}
-		[HttpDelete("{pointofinterestid}")]
+		[HttpDelete("{pointOfInterestid}")]
 
 		public async Task <ActionResult> DeletePointOfInterest(
 			int cityId, int pointOfInterestId)
@@ -174,7 +174,8 @@ namespace CityInfo.API.Controllers
 				return NotFound();
 			}
 
-			_cityInfoRepository.DeletePointOfInterest(pointOfInterestEntity);
+			 _cityInfoRepository.DeletePointOfInterest(pointOfInterestEntity);
+			await _cityInfoRepository.SaveChangesAsync();
 
 
 			_mailService.Send("Point of interest deleted.", $"Point of interest {pointOfInterestEntity.Name} " +
