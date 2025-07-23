@@ -66,6 +66,12 @@ namespace CityInfo.API
 							Id =5,
 							Name = "homeless Dogs",
 							Description = "They are hungry and dirty"
+						},
+						new PointOfInterestDto()
+						{
+							Id =6,
+							Name = "home Dogs",
+							Description = "They are clean"
 						}
 					}
 				},

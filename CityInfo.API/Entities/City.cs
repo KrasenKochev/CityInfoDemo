@@ -19,7 +19,7 @@ namespace CityInfo.API.Entities
 		public ICollection<PointOfInterest> PointsOfInterest { get; set; }
 		= new List<PointOfInterest>();
 
-		public City(string name) 
+		public City(string name)
 		{
 			Name = name;
 		}
