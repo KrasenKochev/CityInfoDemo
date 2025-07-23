@@ -1,4 +1,4 @@
-﻿using CityInfo.API.Entities;
+﻿ using CityInfo.API.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CityInfo.API.DbContexts
@@ -19,7 +19,7 @@ namespace CityInfo.API.DbContexts
 
 			modelBuilder.Entity<City>()
 				.HasData(
-				new City("Lovech dage")
+				new City("Lovech")
 				{
 					Id = 1,
 					Description = "The hometown"
@@ -28,6 +28,11 @@ namespace CityInfo.API.DbContexts
 				{
 					Id = 2,
 					Description = "The da-ge original city"
+				},
+				new City("Paris")
+				{
+					Id = 3,
+					Description = "The one with that big tower"
 				}
 				);
 
@@ -39,18 +44,36 @@ namespace CityInfo.API.DbContexts
 					CityId =1,
 					Description = "The home"
 				},
-					new PointOfInterest("fghfghfg")
-					{
-						Id = 2,
-						CityId = 1,
-						Description = "dsfsdfsd"
-					},
+				new PointOfInterest("Empire State Building")
+				{
+					Id = 2,
+					CityId = 1,
+					Description = "A Skycraper"
+				},
 
 				new PointOfInterest("zooPark")
 				{
 					Id = 3,
 					CityId =2,
 					Description = "The animal zoo"
+				},
+				new PointOfInterest("Antwerp Central Station")
+				{
+					Id=4,
+					CityId = 2,
+					Description = "The finest station"
+				},
+				new PointOfInterest("Eifell Tower")
+				{
+					Id=5,
+					CityId = 3,
+					Description ="The big Tower"
+				},
+				new PointOfInterest("The Louvre")
+				{
+					Id = 5,
+					CityId = 3,
+					Description = "Largest Museum"
 				}
 				);
 
